@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="title align-center">
+    <h1 class="mat-display-1">Add Client</h1>
+  </div>
+
+  <form>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput required name="firstName" maxlength="64" [(ngModel)]="firstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Last name</mat-label>
+        <input matInput required name="lastName" maxlength="64" [(ngModel)]="lastName">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput required name="userName" maxlength="64" [(ngModel)]="username">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" maxlength="128" [(ngModel)]="email">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="1234 Main St" maxlength="255" required name="address" [(ngModel)]="address">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row" *ngIf="countries$ | async let countries">
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <mat-select required name="country" [(ngModel)]="countryIso">
+          <mat-option *ngFor="let country of countries" [value]="country.iso">{{ country.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div class="form-row">
+      <button mat-raised-button color="primary" (click)="submitClient()" >{{ getSubmitButtonLabel() }}</button>
+    </div>
+  </form>
+</div>

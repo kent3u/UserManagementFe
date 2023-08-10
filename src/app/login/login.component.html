@@ -1,0 +1,28 @@
+<div class="container-xs">
+  <div class="title align-center">
+    <h1 class="mat-display-1">Log In</h1>
+  </div>
+
+  <form>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput required name="username" [(ngModel)]="username">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput required name="password" [(ngModel)]="password" type="password">
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div class="form-row">
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="form-row">
+    <button mat-raised-button color="primary" (click)="logInWithRedirect()">Log in</button>
+  </div>
+</div>
