@@ -36,7 +36,6 @@ export class ClientAddEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log([][0])
     this.clientId = this.route.snapshot.paramMap.get('id');
     if (this.isEditClient()) {
       this.populateFieldsWithExistingClient()
